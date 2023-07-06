@@ -1,0 +1,46 @@
+<div class="food-list-container">
+  <h2>Liste des aliments</h2>
+  <button *ngIf="currentUser?.adm === 1" (click)="openPopup(null)" class="add-button">Ajouter un aliment</button>
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Calories</th>
+      <th>Lipides</th>
+      <th>Glucides</th>
+      <th>Protéines</th>
+      <th *ngIf="currentUser?.adm === 1">Actions</th>
+    </tr>
+    <tr *ngFor="let food of foods">
+      <td>{{ food.name }}</td>
+      <td>{{ food.calories }}</td>
+      <td>{{ food.lipids }}</td>
+      <td>{{ food.carbohydrates }}</td>
+      <td>{{ food.proteins }}</td>
+      <td *ngIf="currentUser?.adm === 1">
+        <button *ngIf="currentUser?.adm === 1" (click)="openPopup(food)" class="edit-button">Modifier</button>
+        <button *ngIf="currentUser?.adm === 1" (click)="deleteFood(food)" class="delete-button">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="overlay" *ngIf="popupVisible"></div>
+
+  <div class="popup" *ngIf="popupVisible">
+    <h3>{{ isNewFood ? 'Ajouter un aliment' : 'Modifier l\'aliment' }}</h3>
+    <label for="nameInput">Nom :</label>
+    <input type="text" id="nameInput" [(ngModel)]="selectedFood.name" class="input-field"><br>
+    <label for="caloriesInput">Calories :</label>
+    <input type="number" id="caloriesInput" [(ngModel)]="selectedFood.calories" class="input-field"><br>
+    <label for="lipidsInput">Lipides :</label>
+    <input type="number" id="lipidsInput" [(ngModel)]="selectedFood.lipids" class="input-field"><br>
+    <label for="carbohydratesInput">Glucides :</label>
+    <input type="number" id="carbohydratesInput" [(ngModel)]="selectedFood.carbohydrates" class="input-field"><br>
+    <label for="proteinsInput">Protéines :</label>
+    <input type="number" id="proteinsInput" [(ngModel)]="selectedFood.proteins" class="input-field"><br>
+    <div class="button-container">
+      <button *ngIf="isNewFood" (click)="addFood()" class="edit-button">Ajouter</button>
+      <button *ngIf="!isNewFood" (click)="saveChanges()" class="edit-button">Enregistrer</button>
+      <button (click)="closePopup()" class="delete-button">Annuler</button>
+    </div>
+  </div>
+</div>

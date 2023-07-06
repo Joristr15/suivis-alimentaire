@@ -1,0 +1,14 @@
+{
+    "foods": [
+      { "id": 1, "name": "Pommes", "calories": 52, "lipids": 0.2, "carbohydrates": 14, "proteins": 0.3 },
+      { "id": 2, "name": "Bananes", "calories": 96, "lipids": 0.2, "carbohydrates": 23, "proteins": 1 },
+      { "id": 3, "name": "Oranges", "calories": 43, "lipids": 0.1, "carbohydrates": 9, "proteins": 1 },
+      { "id": 4, "name": "Poires", "calories": 57, "lipids": 0.2, "carbohydrates": 15, "proteins": 0.4 },
+      { "id": 5, "name": "Carottes", "calories": 41, "lipids": 0.2, "carbohydrates": 10, "proteins": 0.9 },
+      { "id": 6, "name": "Brocolis", "calories": 55, "lipids": 0.6, "carbohydrates": 11, "proteins": 3.6 },
+      { "id": 7, "name": "Tomates", "calories": 18, "lipids": 0.2, "carbohydrates": 3.9, "proteins": 0.9 },
+      { "id": 8, "name": "Courgettes", "calories": 17, "lipids": 0.3, "carbohydrates": 3.1, "proteins": 1.2 },
+      { "id": 9, "name": "Patates douces", "calories": 86, "lipids": 0.1, "carbohydrates": 20.1, "proteins": 1.6 },
+      { "id": 10, "name": "Riz brun", "calories": 111, "lipids": 0.9, "carbohydrates": 23.5, "proteins": 2.6 }
+    ]
+  }
